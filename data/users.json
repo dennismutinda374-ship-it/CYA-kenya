@@ -1,0 +1,97 @@
+{
+  "dennis": {
+    "password": "$2a$10$DSQ.HAgxVkyNY92fO8EgGu8TJXpFhP5fjqZNDbqi7R2qxo7tIutOe",
+    "stats": "839b809224ddcefcd36f63d2179ab672:c3601b52224ea28853878a16d1268f646c61b59ab30f7ba518897df6957bfbbec8b8c40362272f2ca6e16ed0a41555c07e338f65b73d8cbecac8140590f33fd4dfba10aa06f95ecb88087029eae1972322551c01e397f396745d21f00ae24d2b11ae6c0025d6c4ba46943addadbd0efa03ed2b6efb7c4bf9fe7fe43f14f98fb2686247f7f1b7148c09a3d5942c3f8bffcd6a4ddce67efd7365f1ebe5ae55e28b622bbec7be1a0291ae959d8d577d2aa5",
+    "createdAt": "2025-11-29T05:06:20.243Z",
+    "role": "General Member",
+    "username": "dennis",
+    "church": "Aic Kitanga",
+    "phoneNumber": "+254748012336"
+  },
+  "joe": {
+    "password": "$2a$10$r4p4aRxMXIIAIW2AGJslPOMdx0nM1ew51Y1sjc8JjFplHh571WaPO",
+    "stats": "d1b6c307134a245e07d1c19b6e71bac6:512888cfb647129f028a45db9f8481e680dbd468213ede0b2dc5a20176d52fabed6544be3d655b332075ba705b22760df440b39a6cf6f5e911b3e1e29daa9d8ac98b1ae32395f4a186c0ec8a70f2a46bf6ba3a079e189db8ccb5d0ebca230c462ab504c558852d17f85f6f5a9d5e2dd4285d066d3642b80f73fd3e034965f7ba23e28a78555fd746c0910c34311cf244dd1867229e87bb8ff1d6984d250818e7",
+    "createdAt": "2025-11-29T17:05:15.899Z",
+    "role": "general",
+    "passwordResetNeeded": false,
+    "tempPassword": "Joe@67581",
+    "tempPasswordExpiry": 1764512188047,
+    "username": "joe",
+    "church": "Aic Kitanga",
+    "phoneNumber": "+254712345002"
+  },
+  "miriam": {
+    "password": "$2a$10$0MI5uuLYkkZBQbS5y.ZDVeZW/Y.Hl4eiIcXKngUe83tLKEtcX9.yy",
+    "stats": "771d5217f0923418239f1d75af98aa5f:b1b791ebfbf1a904fa01b20f0018666280e99f871a94d6fb115c86ced26ed0116a96bffa869996751bbd2ec44f101c9ed477ae193d2a54243d43c9fb762076e6831fc74edb7137f5de006aae9c4f813e4a164946f423c96b0717c438c87b3d542ecce6d86c39c5dc2a0cc5f40d89a1f31938c98489ac4b1d8c615e5525bc2aba3ebf0034e747c04703a8fa2418f20f9fec9f794fad6082028d23e5d9ea3ab291",
+    "createdAt": "2025-11-30T04:18:36.086Z",
+    "role": "general",
+    "username": "miriam",
+    "church": "Aic Kitanga",
+    "phoneNumber": "+254712345003"
+  },
+  "lynn": {
+    "password": "$2a$10$GqZ5228zAII0WTYD.hAVveKnt/84.GExQSQJjR9bdDBki4IwRwz8y",
+    "stats": "43a667f7886a2f3d36fc8c1173a81b19:cf7b9d88865fa94cbf8e437f31ee85d5aa36e350f718788decfd8e8c9bc0e710e179382ae46caa43cd76b9a439c6a0fec41a68e5d327fc9079ecff2023d87dee3f09c012b8584e83000659990e31881b1b09cd260d972ea13b09f190a1759fb76e9972064c50c047ab64f601d1e307c85c6a8fcb8a23190dcc7119e8570a6f1f1a4c7240b1bea0c3aaee55cb17f19fb4a116c20ed085441b7acf8420ccad7700",
+    "createdAt": "2025-11-30T10:42:00.465Z",
+    "role": "general",
+    "username": "lynn",
+    "church": "Aic Kitanga",
+    "updatedAt": "2025-12-01T07:36:26.438Z",
+    "phoneNumber": "+254712345004"
+  },
+  "proff": {
+    "password": "$2a$10$h5x5S8OFd9Y9U5BD5/fWbuYmRMQ6jOmdV4/XEX00PWLrvWDHZDtVm",
+    "stats": "9e41a4b2d48769ccc100e6f12263cdb7:d0d1140c24ebdd28a08a1861c97679710ce88f1c3f5ade43997dcdd3a9fee64527e70097c4fd514115c006721c8f5264a6480b02aa117fc98a6a87129525d06b25bde192485accb15196e9bc52decca0fa1f954fbe6169cd0862d520c2e4526cc031ebd9aab5448ee742fcbad8c8ca7555d0654f3d77285d9918e1b49e0e5c392c63140f60350717081fb193a522fa398f0a3e950ec3267d96ab77a8ee41150aff72492d59a6b641dac6dce36341632b",
+    "createdAt": "2025-11-30T14:09:36.505Z",
+    "role": "moderator",
+    "username": "proff",
+    "church": "Aic Kitanga",
+    "phoneNumber": "+254712345005"
+  },
+  "deno": {
+    "password": "$2a$10$ZBFU/aIMOelSiaRObjJOY./MH6NtOc0txJN.v5.zoiOt.PnrbZSSK",
+    "stats": "de67dcb4ca74a3d3f1bdb727e40a6ab1:512bf36b44a7be52bc1e642cf003149dd124bc6f33e6ae118004f3e4b17123b186d062898d5a0fe6eeec7cd279b866833ce4bbe3ad132cfd55055b5245bebe26dfaf610c1676a14f41d19d595af6d24c2d926a943dc140969b3e645cbb84da1a25bdcd5d8cfd2ad5dac7ca52c2258a65f80340c903de2a7ed75da510f4850cd4e2cf5f53ccf38f285b460bcbea3667129bcee2b405da88a4804d066e81d987d88d756babc55add464d3d3ab5d25f2dbc411c969fe02f2f242d80f7cf218e80cb7edc773994733e885d0b7fa5b5b5e01ff25c426469d599351269864e59d030b97670a4e0db4596b77606b17fcf2c64201e62ef82e607613fcc85d241a3a18b728e2f9507520e0b8007de18487fe9ce71cd45428a88fd278f2fe1c5bc802f740682c105e82183fd9f3fa3c18e191bbc85843713ab0c305ec4b01380e72de1c287fbf88d29a87048a036a386d3ab1e0bb8e96eee3cf67fb6f99d3775efeb011eaf74d45403a2b8149d0475a2e09ff23526343b35db3f46acb6cf795cb3009b671ad008858b95501a660bd79d9ea956598eb450ce020c2d1f0b39a924ce39afe2a0cc555aff33e4e0ce9f7ecf1907a6e670bd819387617925374df66986452c316bd56cfb3475782da4a38a5b77f46d107a681a177222157ca09e47a3b51e261f2cba7d8f2e3067f022ca4e013c62d1c87012c31205d9484f40b9c16bf77f067018403d4261a1db407e21645aba510a67bc",
+    "createdAt": "2025-12-01T17:51:50.687Z",
+    "role": "system admin",
+    "username": "deno",
+    "church": "Aic Kitanga",
+    "updatedAt": "2025-12-02T04:53:22.254Z",
+    "phoneNumber": "+254712345006"
+  },
+  "brian": {
+    "password": "$2a$10$.63Ltq7o5wGCCFA7R7vcjupMdXk5QylAf8yiUdApPLgZ7mkdYaoIO",
+    "stats": "bc9486855ed2d7fe1eac3d798c32af53:5494f950c07dcd491ddd3f4b7e9b3070458938ea66c939e3604a6314a85726ec8757f174edb6f8d495cd3839df1a0bc00bbd3569b1056f2d041037452089128150df07dd69d006dbd9848b824bbb976a0db2ddd3128f10cdde6a19ecb8cdc49d72d24f54353105b3a91c293b9cf8df541c9038ad9d02e82d4064835fbf7f794a7b2118feb4796e81ea01b1a244b1c8df9d05025e4538223a4f882015bb1a5eb4562dffe2e930577d54dbd65da3cff241d56896387147e115242a140111b22718",
+    "createdAt": "2025-12-01T19:16:17.583Z",
+    "role": "general",
+    "church": "Aic Kitanga",
+    "username": "brian",
+    "phoneNumber": "+254712345007"
+  },
+  "kennie": {
+    "password": "$2a$10$ZLy.w8kTiHp.dCqhYlBOqe0NsKIspBVYCNSwWUXaawKUAhf6QwzXW",
+    "stats": "9abd59ce7a9a3eac8d5b0c8cec7fa4e6:086f4a0bf929f101a822a6af3fc531bc5070876791a7c8c01d0b1bd2df754d5b779f5b1a6aae6dbce13d4db70d5a60cd69194f1d5d35cd7e2815e9e43f2ce67feeb157cc8b2bce906b458f6a34daa964afb96a78622283dfc40dc54b96f75992ea03c032e5cd9dc98fa664938c3efc1c3595f2a64d1fcade9642d3e36496e9ae107a30cc05e91e0f8945e74a80e3d4a26312198cf82acc21a88512a198a0d73ae3c60797b5d30244a7829510cb81e29d9c4aa3aaa2fea789764df7958956c21d",
+    "createdAt": "2025-12-02T04:27:05.694Z",
+    "role": "general",
+    "church": "General Member",
+    "username": "kennie",
+    "phoneNumber": "+254712345008"
+  },
+  "rube": {
+    "password": "$2a$10$bEALQK6w.h/vFLYz13iRwu.7juZeEnbB6MHixX3aa3tdO3keo6Iba",
+    "stats": "9bab7f5095be661ab91cef0f8c18e50f:23221fb0498ab973bc15c4d21596cf83fc16b08a2ce86d92ffb55ffe1684662fe837ec7426b07c4738fe3ce9ef0ba1668905b7f31fbdd4515626785eddcf72267cd89f450de118c4b00e5296cbb7cb1fd7479126a53d725c82274090b724d23385704a7fbb85b40fe179aafd7bca79fca4fbe26566c55d459146c550f3589807fba43a8ec3b4dc6f327022d08a57966e2c7d50cadd90dc4cb9620f85027bd870f1bf6dfd440273db5268c90a7ab6836a22bd8f2827715ab0ffc71c943a74bee3",
+    "createdAt": "2025-12-02T04:31:54.110Z",
+    "role": "general",
+    "church": "General Member",
+    "username": "rube",
+    "phoneNumber": "+254712345009"
+  },
+  "b.m": {
+    "password": "$2a$10$OtTxQjnJku86xljLeweSNO8a4kjp80kqJoyp0JHWUk1GOMT.OVfrC",
+    "stats": "4a08dcc348b6d8297055bb11145716cd:12427e1422073b926693bb16953e4d3cf129bd89c5ee83534f49a2f22a2d4e068141d53ad7dbfc375d711e993e621b2f94e0467a53f115bd79b28103dc14d51561214e9a922ded39a71709f3966cf974525fe81f989338def28bc3ac7c8edda59b31f648606fea4220b09755ab3a022969d1e015c45f6d96f36f53fc67ab8eb7dfeaf93acb37a17f619fbfa146a4ace7de243ce2e054cd03d948cd7cb4dfca6eccc05563440c4157dbcd0a9c6a7a0279bf4b485731fc2d6723bea1a3886442a3",
+    "createdAt": "2025-12-02T04:47:05.006Z",
+    "role": "general",
+    "church": "General Member",
+    "username": "b.m",
+    "phoneNumber": "+254712345010"
+  }
+}
