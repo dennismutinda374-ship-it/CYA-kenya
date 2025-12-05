@@ -1,9 +1,65 @@
 {
-  "dennie": {
-    "password": "$2a$10$e6V6WkWyGXI9X/itS4ZSROeqeLpgu26gvHEI/QLSvPF/Q79VTOTP2",
-    "role": "admin",
-    "stats": "cf0fd662729efdc4f10059621b50b011:9c1aa410289a372e21a8dcb138de33f27f73653ad51f8cfdd185ed577cbc617395ef826bae2cd6802c4f835e6211fa75971f488e74225d6c23e49df1ee8913a7449054b48ebb876986c1f5420508bd5c638e94d168430f11f8da67c8fa8add2c5e0c006039f6d89b66a52c72588de89b6d7d8d5de9ded57cec2ad2b7308caac9ed42ea99a5b8003454aaf8666c5936c7f99bfca6aa81d25c45fb9812bcb73c7b747598d972dc13aa525cb54113f42e8b",
-    "createdAt": "2025-11-27T09:45:26.472Z"
-    
+  "dennis": {
+    "password": "$2a$10$DSQ.HAgxVkyNY92fO8EgGu8TJXpFhP5fjqZNDbqi7R2qxo7tIutOe",
+    "stats": "839b809224ddcefcd36f63d2179ab672:c3601b52224ea28853878a16d1268f646c61b59ab30f7ba518897df6957bfbbec8b8c40362272f2ca6e16ed0a41555c07e338f65b73d8cbecac8140590f33fd4dfba10aa06f95ecb88087029eae1972322551c01e397f396745d21f00ae24d2b11ae6c0025d6c4ba46943addadbd0efa03ed2b6efb7c4bf9fe7fe43f14f98fb2686247f7f1b7148c09a3d5942c3f8bffcd6a4ddce67efd7365f1ebe5ae55e28b622bbec7be1a0291ae959d8d577d2aa5",
+    "createdAt": "2025-11-29T05:06:20.243Z",
+    "role": "chairperson",
+    "username": "dennis",
+    "church": "AIC Kitanga"
+  },
+  "joe": {
+    "password": "$2a$10$r4p4aRxMXIIAIW2AGJslPOMdx0nM1ew51Y1sjc8JjFplHh571WaPO",
+    "stats": "d1b6c307134a245e07d1c19b6e71bac6:512888cfb647129f028a45db9f8481e680dbd468213ede0b2dc5a20176d52fabed6544be3d655b332075ba705b22760df440b39a6cf6f5e911b3e1e29daa9d8ac98b1ae32395f4a186c0ec8a70f2a46bf6ba3a079e189db8ccb5d0ebca230c462ab504c558852d17f85f6f5a9d5e2dd4285d066d3642b80f73fd3e034965f7ba23e28a78555fd746c0910c34311cf244dd1867229e87bb8ff1d6984d250818e7",
+    "createdAt": "2025-11-29T17:05:15.899Z",
+    "role": "general",
+    "passwordResetNeeded": false,
+    "tempPassword": "Joe@67581",
+    "tempPasswordExpiry": 1764512188047,
+    "username": "joe",
+    "church": "AIC Kitanga"
+  },
+  "miriam": {
+    "password": "$2a$10$0MI5uuLYkkZBQbS5y.ZDVeZW/Y.Hl4eiIcXKngUe83tLKEtcX9.yy",
+    "stats": "771d5217f0923418239f1d75af98aa5f:b1b791ebfbf1a904fa01b20f0018666280e99f871a94d6fb115c86ced26ed0116a96bffa869996751bbd2ec44f101c9ed477ae193d2a54243d43c9fb762076e6831fc74edb7137f5de006aae9c4f813e4a164946f423c96b0717c438c87b3d542ecce6d86c39c5dc2a0cc5f40d89a1f31938c98489ac4b1d8c615e5525bc2aba3ebf0034e747c04703a8fa2418f20f9fec9f794fad6082028d23e5d9ea3ab291",
+    "createdAt": "2025-11-30T04:18:36.086Z",
+    "role": "general",
+    "username": "miriam",
+    "church": "AIC Kitanga"
+  },
+  "lynn": {
+    "password": "$2a$10$aA6F5q3SCPN8aWyPJ4SxquR8jLLk1p.eEYEWzt8IfsbpbTJ9bbUsa",
+    "stats": "43a667f7886a2f3d36fc8c1173a81b19:cf7b9d88865fa94cbf8e437f31ee85d5aa36e350f718788decfd8e8c9bc0e710e179382ae46caa43cd76b9a439c6a0fec41a68e5d327fc9079ecff2023d87dee3f09c012b8584e83000659990e31881b1b09cd260d972ea13b09f190a1759fb76e9972064c50c047ab64f601d1e307c85c6a8fcb8a23190dcc7119e8570a6f1f1a4c7240b1bea0c3aaee55cb17f19fb4a116c20ed085441b7acf8420ccad7700",
+    "createdAt": "2025-11-30T10:42:00.465Z",
+    "role": "general",
+    "passwordResetNeeded": false,
+    "tempPassword": "lynn@20868",
+    "tempPasswordExpiry": 1764898558572,
+    "username": "lynn",
+    "updatedAt": "2025-12-01T07:36:26.438Z",
+    "church": "AIC Kitanga"
+  },
+  "proff": {
+    "password": "$2a$10$h5x5S8OFd9Y9U5BD5/fWbuYmRMQ6jOmdV4/XEX00PWLrvWDHZDtVm",
+    "stats": "9e41a4b2d48769ccc100e6f12263cdb7:d0d1140c24ebdd28a08a1861c97679710ce88f1c3f5ade43997dcdd3a9fee64527e70097c4fd514115c006721c8f5264a6480b02aa117fc98a6a87129525d06b25bde192485accb15196e9bc52decca0fa1f954fbe6169cd0862d520c2e4526cc031ebd9aab5448ee742fcbad8c8ca7555d0654f3d77285d9918e1b49e0e5c392c63140f60350717081fb193a522fa398f0a3e950ec3267d96ab77a8ee41150aff72492d59a6b641dac6dce36341632b",
+    "createdAt": "2025-11-30T14:09:36.505Z",
+    "role": "moderator",
+    "username": "proff",
+    "church": "AIC Kitanga"
+  },
+  "deno": {
+    "password": "$2a$10$1YFJ/gXUexzpDj0i07zDfOUD9c6e0spfzMG8IzmzdReNTdcKvZ.yy",
+    "stats": "8dd36abd58fe4f5c3b8a779cf8b57acb:d24cf49ab57989f5a7c6003ba9daa8c1a1b5de0c20e7c9463fcd21f39eac0ece178a8e9d2a953044a4caba1b3acb5681691c7f1f764d31707826ad0cd0924428e248a905c88eb00abf839a5b61c6286824035bf0b65d4e11d1a3adc51846c63b8392e1d622908963731f5ccc6aacb3b4a6feebdce8ac07a7c883d7fd058cd6c1cb52afa6a5663612d223dd357138ae8191a0fb58257fe63c0411c0b49977ddd2e8167c9a14ed324336ce1439ae80990e",
+    "createdAt": "2025-12-01T17:51:50.687Z",
+    "role": "system-admin",
+    "username": "deno",
+    "church": "AIC Kitanga"
+  },
+  "brian": {
+    "password": "$2a$10$.63Ltq7o5wGCCFA7R7vcjupMdXk5QylAf8yiUdApPLgZ7mkdYaoIO",
+    "stats": "bc9486855ed2d7fe1eac3d798c32af53:5494f950c07dcd491ddd3f4b7e9b3070458938ea66c939e3604a6314a85726ec8757f174edb6f8d495cd3839df1a0bc00bbd3569b1056f2d041037452089128150df07dd69d006dbd9848b824bbb976a0db2ddd3128f10cdde6a19ecb8cdc49d72d24f54353105b3a91c293b9cf8df541c9038ad9d02e82d4064835fbf7f794a7b2118feb4796e81ea01b1a244b1c8df9d05025e4538223a4f882015bb1a5eb4562dffe2e930577d54dbd65da3cff241d56896387147e115242a140111b22718",
+    "createdAt": "2025-12-01T19:16:17.583Z",
+    "role": "general",
+    "church": "AIC Kitanga",
+    "username": "brian"
   }
 }

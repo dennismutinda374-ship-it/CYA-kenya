@@ -10,205 +10,28 @@ let gameActive = false;
 let purchasedHints = {}; // Track which hints have been purchased: { questionId: [hintIndex, ...] }
 const timeLimit = 30; // 30 seconds per question
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-  setupEventListeners();
-  loadCategories();
-});
+// Initialize - Removed, now handled by game.js for proper auth check
 
-function setupEventListeners() {
-  // Login form submission
-  document.getElementById('loginForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    handleLogin();
-  });
-
-  // Signup form submission
-  document.getElementById('signupForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    handleSignup();
-  });
-}
-
-// Toggle between login and signup forms
-function toggleForms() {
-  const loginForm = document.querySelector('.login-form');
-  const signupForm = document.querySelector('.signup-form');
-  
-  if (loginForm.style.display === 'none') {
-    loginForm.style.display = 'block';
-    signupForm.style.display = 'none';
-  } else {
-    loginForm.style.display = 'none';
-    signupForm.style.display = 'block';
-  }
-  
-  clearAuthErrors();
-  return false;
-}
-
-function clearAuthErrors() {
-  const errorMessage = document.querySelector('.error-message');
-  if (errorMessage) {
-    errorMessage.classList.remove('show');
-  }
-}
-
-function showError(message, containerId = 'authContainer') {
+function showError(message, containerId) {
   const container = document.getElementById(containerId);
-  let errorEl = container.querySelector('.error-message');
-  
-  if (!errorEl) {
-    errorEl = document.createElement('div');
-    errorEl.className = 'error-message';
-    container.insertBefore(errorEl, container.firstChild);
-  }
-  
-  errorEl.textContent = message;
-  errorEl.classList.add('show');
-}
-
-function showSuccess(message, containerId = 'gameContainer') {
-  const container = document.getElementById(containerId);
-  let successEl = container.querySelector('.success-message');
-  
-  if (!successEl) {
-    successEl = document.createElement('div');
-    successEl.className = 'success-message';
-    container.insertBefore(successEl, container.firstChild);
-  }
-  
-  successEl.textContent = message;
-  successEl.classList.add('show');
-  
-  setTimeout(() => {
-    successEl.classList.remove('show');
-  }, 3000);
-}
-
-// Handle login
-async function handleLogin() {
-  clearAuthErrors();
-  
-  const username = document.getElementById('loginUsername').value.trim();
-  const password = document.getElementById('loginPassword').value;
-
-  if (!username || !password) {
-    showError('Please fill in all fields');
-    return;
-  }
-
-  try {
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password })
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.error || 'Login failed');
-    }
-
-    authToken = data.token;
-    currentUsername = data.username;
-    localStorage.setItem('authToken', authToken);
-    localStorage.setItem('username', currentUsername);
-
-    document.getElementById('authContainer').style.display = 'none';
-    document.getElementById('gameContainer').style.display = 'block';
-
-    document.getElementById('playerName').textContent = currentUsername;
-    updateStatsDisplay(data.stats);
-
-    document.getElementById('loginUsername').value = '';
-    document.getElementById('loginPassword').value = '';
-
-    loadCategories();
-  } catch (error) {
-    showError(error.message);
+  if (container) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    container.prepend(errorDiv);
+    setTimeout(() => errorDiv.remove(), 5000);
   }
 }
 
-// Handle signup
-async function handleSignup() {
-  clearAuthErrors();
-  
-  const username = document.getElementById('signupUsername').value.trim();
-  const password = document.getElementById('signupPassword').value;
-  const confirmPassword = document.getElementById('confirmPassword').value;
-
-  if (!username || !password || !confirmPassword) {
-    showError('Please fill in all fields');
-    return;
-  }
-
-  if (password !== confirmPassword) {
-    showError('Passwords do not match');
-    return;
-  }
-
-  if (password.length < 6) {
-    showError('Password must be at least 6 characters');
-    return;
-  }
-
-  try {
-    const response = await fetch('/api/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password })
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.error || 'Signup failed');
-    }
-
-    authToken = data.token;
-    currentUsername = data.username;
-    localStorage.setItem('authToken', authToken);
-    localStorage.setItem('username', currentUsername);
-
-    document.getElementById('authContainer').style.display = 'none';
-    document.getElementById('gameContainer').style.display = 'block';
-
-    document.getElementById('playerName').textContent = currentUsername;
-    updateStatsDisplay(data.stats);
-
-    document.getElementById('signupUsername').value = '';
-    document.getElementById('signupPassword').value = '';
-    document.getElementById('confirmPassword').value = '';
-
-    loadCategories();
-  } catch (error) {
-    showError(error.message);
-  }
-}
-
-// Update stats display
-function updateStatsDisplay(stats) {
-  document.getElementById('balance').textContent = '$' + stats.balance.toFixed(2);
-  document.getElementById('totalGames').textContent = stats.totalGamesPlayed;
-  document.getElementById('totalWins').textContent = stats.totalWins;
-  document.getElementById('totalLosses').textContent = stats.totalLosses;
-
-  const winRate = stats.totalGamesPlayed > 0
-    ? ((stats.totalWins / stats.totalGamesPlayed) * 100).toFixed(1)
-    : '0';
-  document.getElementById('winRate').textContent = winRate + '%';
-  document.getElementById('todayGames').textContent = stats.gamesWonToday;
-}
-
-// Load and display categories
 async function loadCategories() {
-  if (!authToken) return;
-
   try {
+    const token = window.authToken || authToken;
+    if (!token) {
+      throw new Error('No authentication token found');
+    }
+
     const response = await fetch('/api/categories', {
-      headers: { 'Authorization': `Bearer ${authToken}` }
+      headers: { 'Authorization': `Bearer ${token}` }
     });
 
     const data = await response.json();
@@ -219,7 +42,8 @@ async function loadCategories() {
 
     displayCategories(data.categories);
   } catch (error) {
-    showError(error.message, 'gameContainer');
+    console.error('Error loading categories:', error);
+    showError(error.message, 'gameSetup');
   }
 }
 
@@ -411,11 +235,14 @@ function updateTimerDisplay(seconds) {
   document.getElementById('timer').textContent = seconds + 's';
   
   const timerBox = document.querySelector('.timer-box');
-  if (seconds <= 10) {
-    timerBox.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
-  } else if (seconds <= 5) {
+  if (seconds <= 5) {
     timerBox.style.background = 'linear-gradient(135deg, #c0392b 0%, #a93226 100%)';
     document.getElementById('timer').style.animation = 'pulse 0.5s infinite';
+  } else if (seconds <= 10) {
+    timerBox.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
+  } else {
+    timerBox.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+    document.getElementById('timer').style.animation = 'none';
   }
 }
 
@@ -543,22 +370,21 @@ function logout() {
   currentUsername = null;
   localStorage.removeItem('authToken');
   localStorage.removeItem('username');
+  
+  document.getElementById('navMiddle').style.display = 'none';
+  document.getElementById('navRight').style.display = 'none';
 
-  document.getElementById('loginUsername').value = '';
-  document.getElementById('loginPassword').value = '';
-  document.getElementById('signupUsername').value = '';
-  document.getElementById('signupPassword').value = '';
-  document.getElementById('confirmPassword').value = '';
+  window.location.href = 'landing.html';
+}
 
-  document.getElementById('authContainer').style.display = 'block';
-  document.getElementById('gameContainer').style.display = 'none';
-
-  const loginForm = document.querySelector('.login-form');
-  const signupForm = document.querySelector('.signup-form');
-  loginForm.style.display = 'block';
-  signupForm.style.display = 'none';
-
-  clearAuthErrors();
+function showPage(pageId) {
+  if (pageId === 'dashboardContainer') {
+    window.location.href = 'dashboard.html';
+  } else {
+    // Show game page, hide dashboard
+    document.getElementById('gameContainer').style.display = 'block';
+    document.getElementById('dashboardContainer').style.display = 'none';
+  }
 }
 
 // Check if user is already logged in on page load
@@ -581,8 +407,13 @@ window.addEventListener('load', () => {
       }
     })
     .then(stats => {
+      // Show game interface, hide auth container
       document.getElementById('authContainer').style.display = 'none';
       document.getElementById('gameContainer').style.display = 'block';
+      document.getElementById('topNav').style.display = 'flex';
+      document.getElementById('navMiddle').style.display = 'flex';
+      document.getElementById('navRight').style.display = 'flex';
+      document.getElementById('userDisplay').textContent = `👤 ${currentUsername}`;
       document.getElementById('playerName').textContent = currentUsername;
       updateStatsDisplay(stats);
       loadCategories();
@@ -594,144 +425,4 @@ window.addEventListener('load', () => {
       currentUsername = null;
     });
   }
-});
-// Sample leaderboard data (in real app, fetch from server)
-let leaderboardData = [
-    { username: "Player1", wins: 12, winRate: 80, balance: 150 },
-    { username: "Player2", wins: 10, winRate: 71, balance: 120 },
-    { username: "Player3", wins: 8, winRate: 66, balance: 100 },
-    { username: "Player4", wins: 5, winRate: 50, balance: 60 },
-];
-
-// Function to update leaderboard
-function updateLeaderboard(category, data) {
-    document.getElementById('leaderboardCategory').textContent = category;
-    const tbody = document.getElementById('leaderboardBody');
-    tbody.innerHTML = ''; // Clear previous rows
-
-    data.sort((a, b) => b.wins - a.wins); // Sort by wins descending
-
-    data.forEach((player, index) => {
-        const row = `<tr>
-            <td>${index + 1}</td>
-            <td>${player.username}</td>
-            <td>${player.wins}</td>
-            <td>${player.winRate}%</td>
-            <td>$${player.balance.toFixed(2)}</td>
-        </tr>`;
-        tbody.innerHTML += row;
-    });
-
-    document.getElementById('leaderboardContainer').style.display = 'block';
-}
-
-// Call this after game ends
-function showGameResult(resultText, reward, category) {
-    document.getElementById('gameResult').style.display = 'block';
-    document.getElementById('resultText').textContent = resultText;
-    document.getElementById('rewardText').textContent = reward;
-
-    // Update leaderboard for this category
-    updateLeaderboard(category, leaderboardData);
-}
-const DB_PATH = path.join(__dirname, "data", "users.json");
-
-// =======================================================
-//  DATABASE HELPERS
-// =======================================================
-function loadDB() {
-    if (!fs.existsSync(DB_PATH)) return {};
-    return JSON.parse(fs.readFileSync(DB_PATH, "utf8"));
-}
-
-function saveDB(db) {
-    fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 4));
-}
-
-// Automatically create missing fields
-function ensureUserDefaults(db, username) {
-    if (!db[username]) db[username] = {};
-    if (db[username].balance == null) db[username].balance = 0;
-    if (db[username].wins == null) db[username].wins = 0;
-    if (db[username].losses == null) db[username].losses = 0;
-    return db;
-}
-
-// =======================================================
-//  SUPER USER HANDLER
-// =======================================================
-function isSuperUser(username) {
-    return username === "dennie"; // master account
-}
-
-function requireSuperUser(req, res, next) {
-    const username = req.headers['x-admin'];
-
-    if (!username || !isSuperUser(username)) {
-        return res.status(403).json({ message: "Access denied: Super user only" });
-    }
-    next();
-}
-
-// =======================================================
-//  ADMIN ROUTES (ALL FIXED + PROTECTED)
-// =======================================================
-
-// Reset user
-app.post('/admin/reset', requireSuperUser, (req, res) => {
-    const { username } = req.body;
-    const db = loadDB();
-
-    if (!db[username]) return res.status(404).json({ message: "User not found" });
-
-    db[username].balance = 0;
-    db[username].wins = 0;
-    db[username].losses = 0;
-
-    saveDB(db);
-    res.json({ message: `Player ${username} reset successfully` });
-});
-
-// Add balance
-app.post('/admin/addbalance', requireSuperUser, (req, res) => {
-    const { username, amount } = req.body;
-    let db = loadDB();
-
-    if (!db[username]) return res.status(404).json({ message: "User not found" });
-
-    db = ensureUserDefaults(db, username);
-    db[username].balance += Number(amount);
-
-    saveDB(db);
-    res.json({ message: `Added $${amount} to ${username}` });
-});
-
-// Deduct balance
-app.post('/admin/deductbalance', requireSuperUser, (req, res) => {
-    const { username, amount } = req.body;
-    let db = loadDB();
-
-    if (!db[username]) return res.status(404).json({ message: "User not found" });
-
-    db = ensureUserDefaults(db, username);
-    db[username].balance -= Number(amount);
-
-    if (db[username].balance < 0) db[username].balance = 0;
-
-    saveDB(db);
-    res.json({ message: `Deducted $${amount} from ${username}` });
-});
-
-// View users
-app.get('/data/users', requireSuperUser, (req, res) => {
-    const db = loadDB();
-
-    const allUsers = Object.entries(db).map(([username, d]) => ({
-        username,
-        balance: d.balance || 0,
-        wins: d.wins || 0,
-        losses: d.losses || 0
-    }));
-
-    res.json(allUsers);
 });

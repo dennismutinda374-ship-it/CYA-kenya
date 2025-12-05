@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1764612901468",
+    "name": "Brian ",
+    "phone": "0799209171",
+    "church": "AIC Kitanga",
+    "status": "approved",
+    "createdAt": "2025-12-01T18:15:01.468Z",
+    "approvedAt": "2025-12-01T18:25:12.546Z",
+    "approvedBy": "system",
+    "generatedCode": "Z5FGARN5",
+    "auto": true,
+    "autoApprovedAt": "2025-12-01T18:25:12.546Z"
+  },
+  {
+    "id": "1764615107903",
+    "name": "Martin",
+    "phone": "0712345685",
+    "church": "AIC Kitanga",
+    "status": "approved",
+    "createdAt": "2025-12-01T18:51:47.903Z",
+    "approvedAt": "2025-12-01T18:55:18.290Z",
+    "approvedBy": "system",
+    "generatedCode": "GBBP117B",
+    "auto": true,
+    "autoApprovedAt": "2025-12-01T18:55:18.290Z"
+  }
+]
