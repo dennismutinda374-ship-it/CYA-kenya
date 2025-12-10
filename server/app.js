@@ -716,13 +716,9 @@ app.post('/api/signup', async (req, res) => {
       return res.status(400).json({ error: 'Registration code required' });
     }
 
-    if (!phoneNumber || phoneNumber.trim().length < 8) {
-      return res.status(400).json({ error: 'Valid phone number required' });
-    }
-
     // Normalize inputs
     const normalizedUsername = username.toLowerCase();
-    const normalizedPhone = phoneNumber.trim();
+    const normalizedPhone = phoneNumber ? phoneNumber.trim() : null;
 
     // Validate registration code
     const codeResult = validateAndConsumeCode(registrationCode.toUpperCase());
@@ -743,17 +739,20 @@ app.post('/api/signup', async (req, res) => {
       return res.status(400).json({ error: 'User already exists' });
     }
 
-    // Check if phone number already registered
-    const existingPhoneUser = Object.values(users).find(u => u.phoneNumber === normalizedPhone);
-    if (existingPhoneUser) {
-      const codes = loadCodes();
-      if (codes[registrationCode.toUpperCase()]) {
-        codes[registrationCode.toUpperCase()].used = false;
-        delete codes[registrationCode.toUpperCase()].usedAt;
-        saveCodes(codes);
+    // Check if phone number already registered    // Check if phone number already registered (only if provided)
+    if (normalizedPhone) {
+      const existingPhoneUser = Object.values(users).find(u => u.phoneNumber === normalizedPhone);
+      if (existingPhoneUser) {
+        const codes = loadCodes();
+        if (codes[registrationCode.toUpperCase()]) {
+          codes[registrationCode.toUpperCase()].used = false;
+          delete codes[registrationCode.toUpperCase()].usedAt;
+          saveCodes(codes);
+        }
+        return res.status(400).json({ error: 'Phone number already registered' });
       }
-      return res.status(400).json({ error: 'Phone number already registered' });
     }
+    
 
     const userRole = codeResult.role;
     const hashedPassword = await bcrypt.hash(password, 10);

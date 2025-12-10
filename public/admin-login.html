@@ -163,13 +163,13 @@
       const allowed = ["admin", "moderator", "superadmin"];
       if (!allowed.includes(data.role.toLowerCase())) {
         throw new Error("You do not have permission to access the Admin Panel.");
-      }
-
-      // Save ONLY username + role (NO TOKEN)
-      localStorage.setItem("adminUsername", username);
-      localStorage.setItem("adminRole", data.role);
+      }      // Save token and user data with correct keys
+      localStorage.setItem("authToken", data.token);
+      localStorage.setItem("username", data.username);
+      localStorage.setItem("userRole", data.role);
 
       window.location.href = "/admin.html";
+
 
     } catch (err) {
       errorEl.textContent = err.message;

@@ -31,14 +31,14 @@ function checkAuth() {
 
     authToken = storedToken;
     currentUsername = storedUsername;
-    userChurch = storedRole || 'general';
+    userRole = storedRole || 'general';
     
     document.getElementById('userDisplay').textContent = `${currentUsername}`;
 }
 
 function loadProfileInfo() {
     document.getElementById('currentUsername').textContent = currentUsername;
-    document.getElementById('userChurch').textContent = memberChurchs[userChurch] || userChurch;
+    document.getElementById('userRole').textContent = userRole || 'general';
 }
 
 async function updateUsername(event) {

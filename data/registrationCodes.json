@@ -8,10 +8,10 @@
   },
   "SA2025": {
     "role": "system-admin",
-    "used": false,
+    "used": true,
     "createdAt": "2025-12-01T10:30:00.000Z",
     "createdBy": "system",
-    "usedAt": "2025-12-01T17:51:50.565Z"
+    "usedAt": "2025-12-05T01:01:03.507Z"
   },
   "SA99": {
     "role": "system-admin",
@@ -50,9 +50,10 @@
     "role": "general",
     "used": false,
     "multiUse": true,
-    "usageCount": 0,
+    "usageCount": 1,
     "createdAt": "2025-12-01T10:30:00.000Z",
-    "createdBy": "system"
+    "createdBy": "system",
+    "lastUsedAt": "2025-12-05T00:59:21.294Z"
   },
   "6VS8LL9R": {
     "role": "moderator",
