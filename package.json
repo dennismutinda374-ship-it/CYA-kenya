@@ -1,0 +1,21 @@
+{
+  "name": "secure-web-game",
+  "version": "1.0.0",
+  "description": "A secure web game app with login/signup and encrypted data storage",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node server/app.js"
+  },
+  "author": "dennie-softs",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.4",
+    "compression": "^1.8.1",
+    "crypto": "^1.0.1",
+    "express": "^4.22.1",
+    "jsonwebtoken": "^9.0.3",
+    "socket.io": "^4.8.1"
+  }
+}

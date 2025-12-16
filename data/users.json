@@ -1,0 +1,11 @@
+{
+  "deno": {
+    "password": "$2a$10$ZEDCD7iB6d4r89A28KXLAuUDZqW.nbOcYu/TGdAUY1nlBYhJsG5Zy",
+    "stats": "a0acfa7751560b08097e2c6c99420940:948ba521cfb880081dd160bf68e73568a6da0305db8a1331c428eae77e02d94c901994f28ab3b190a34483fa337ad8741c1a90dd55662bb9a372a29401f4c2194203fa870bbeedad86ea3eb78806daaa66e345325422ed12b2dfc615735513f09c0689823a1146eb275e56296c428f5e3a1d1b188e1e4747dc17bb7657736fce917c2b72ce05f7bf0d8c3dd5f2fa1e650399074785eedaf922987c93c0b6ed42dc96c1b44dbf48f850186be47c15963fc4e2cc0cf4db0fabf684c82e40d4b8cc",
+    "createdAt": "2025-12-16T06:54:24.798Z",
+    "role": "system-admin",
+    "church": "Aic Kitanga",
+    "username": "deno",
+    "phoneNumber": null
+  }
+}
